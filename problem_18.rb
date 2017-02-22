@@ -22,9 +22,9 @@ splited = data.split("\n").map {|x| x.split.map {|y| y.to_i}}
 #starting from second line counting from the bottom, then adding one of two possible compared numbers 
 #from the line below and rewritting sum up to the top.
 (splited.length - 1).downto(0) do |x| 
-	0.upto(x - 1) do |y| 
-	splited[x - 1][y] += [splited[x][y], splited[x][y + 1]].max
-	end
+  0.upto(x - 1) do |y| 
+  splited[x - 1][y] += [splited[x][y], splited[x][y + 1]].max
+  end
 end
 
 #printing the highest possible value (which is now on the top)

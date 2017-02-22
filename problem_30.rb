@@ -1,5 +1,5 @@
 =begin
-	
+  
 Surprisingly there are only three numbers that can be written as the sum of fourth powers of their digits:
 
 1634 = 14 + 64 + 34 + 44
@@ -10,25 +10,25 @@ As 1 = 14 is not a sum it is not included.
 The sum of these numbers is 1634 + 8208 + 9474 = 19316.
 
 Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
-	
+  
 =end
 
 class SumOfDigits
-	def initialize(up,to,power)
-		@up = up
-		@to = to
-		@power = power
-		checking
-	end
+  def initialize(up,to,power)
+    @up = up
+    @to = to
+    @power = power
+    checking
+  end
 
-	private
+  private
 
-	def checking
-		#creates an up - to array from which it selects searched numbers
-		numbers = (@up..@to).to_a.select {|i| i.to_s.chars.map(&:to_i).map! {|i| i**@power}.reduce(:+) == i }
-		# puts searched sum of numbers
-		p numbers.reduce(:+)
-	end
+  def checking
+    #creates an up - to array from which it selects searched numbers
+    numbers = (@up..@to).to_a.select {|i| i.to_s.chars.map(&:to_i).map! {|i| i**@power}.reduce(:+) == i }
+    # puts searched sum of numbers
+    p numbers.reduce(:+)
+  end
 end
 
 start_time = Time.now

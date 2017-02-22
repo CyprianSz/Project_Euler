@@ -100,12 +100,11 @@ number = "37107287533902102798797998220837590246510135740250
 53503534226472524250874054075591789781264330331690"
 
 def function(x)
-	y = x.split
-	suma100 = 0
-	y.each do |liczba|
-		suma100 += liczba.to_i
-	end
-	return suma100
+  sum100 = 0
+  x.split.each do |liczba|
+    sum100 += liczba.to_i
+  end
+  sum100
 end
-
+ 
 puts function(number).to_s[0..9]

@@ -1,5 +1,5 @@
 =begin
-	
+  
 A perfect number is a number for which the sum of its proper divisors is 
 exactly equal to the number. For example, the sum of the proper divisors
  of 28 would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.
@@ -16,27 +16,27 @@ cannot be expressed as the sum of two abundant numbers is less than this limit.
 
 Find the sum of all the positive integers which cannot be written as the sum of 
 two abundant numbers.
-	
+  
 =end
 
 class Fixnum
-	# What is the sum of divisors:
-	def sum_of_divisors
-		sum = 0
-    	1.upto(Math.sqrt(self)) do |x|
-    		if self % x == 0
-    			sum += x
-    			if x != self / x && x != 1
-    				sum += self / x
-    			end
-    		end
-  		end
-		sum
-	end
-	# If numbrer is abundant:
-	def abundant?
-		self.sum_of_divisors > self
-	end
+  # What is the sum of divisors:
+  def sum_of_divisors
+    sum = 0
+      1.upto(Math.sqrt(self)) do |x|
+        if self % x == 0
+          sum += x
+          if x != self / x && x != 1
+            sum += self / x
+          end
+        end
+      end
+    sum
+  end
+  # If numbrer is abundant:
+  def abundant?
+    self.sum_of_divisors > self
+  end
 end
 
 class SumFinder
@@ -61,10 +61,10 @@ class SumFinder
     # Searching for numbers which fits to possible_numbers:
     i = 0
     @abundants.each do |x|
-    	@abundants[i..@abundants.length].each do |y|
-    		sum = x + y
-    		possible_sums << sum unless sum > @range
-    	end
+      @abundants[i..@abundants.length].each do |y|
+        sum = x + y
+        possible_sums << sum unless sum > @range
+      end
       i += 1
     end
     # Take rid of same results:

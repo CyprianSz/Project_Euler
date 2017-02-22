@@ -1,11 +1,11 @@
 def triangular_number(x)
-	(1..x).reduce(:+)
+  (1..x).reduce(:+)
 end
 
 def check(x)
-	n = 1
-	n += 1 until factors(triangular_number(n)) > x 
-	return triangular_number(n)
+  n = 1
+  n += 1 until factors(triangular_number(n)) > x 
+  return triangular_number(n)
 end
 
 def factors(x)

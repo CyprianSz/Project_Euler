@@ -15,22 +15,22 @@ What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed 
 =end
 
 class AddingDiagonals
-	def initialize(side_size)
-		@side_size = side_size
-		counting
-	end
+  def initialize(side_size)
+    @side_size = side_size
+    counting
+  end
 
-	private
+  private
 
-	def counting
-		numbers = [1]
-		n = 0
-		while n < @side_size - 2
-			(0+2*n..3+2*n).each {|i| numbers.push(numbers[i] + 2 + n) }
-			n += 2
-		end
-		p numbers.reduce(:+)
-	end
+  def counting
+    numbers = [1]
+    n = 0
+    while n < @side_size - 2
+      (0+2*n..3+2*n).each {|i| numbers.push(numbers[i] + 2 + n) }
+      n += 2
+    end
+    p numbers.reduce(:+)
+  end
 end
 
 start_time = Time.now

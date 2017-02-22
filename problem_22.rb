@@ -6,39 +6,39 @@ names.map! {|x| x.downcase} # That is because i've written in case statement in 
 z = 1 # To help counting which number in array counted name. For sure there is more elegant way :)
 
 names.sort!.each do |x| # Iteration throught names array.
-	sum = 0
-	0.upto(x.length - 1) do |y| # Itaration throught each letter of name
-		case x[y] 
-			when "a" then sum += 1
-			when "b" then sum += 2
-			when "c" then sum += 3
-			when "d" then sum += 4
-			when "e" then sum += 5
-			when "f" then sum += 6
-			when "g" then sum += 7
-			when "h" then sum += 8
-			when "i" then sum += 9
-			when "j" then sum += 10
-			when "k" then sum += 11
-			when "l" then sum += 12
-			when "m" then sum += 13
-			when "n" then sum += 14
-			when "o" then sum += 15
-			when "p" then sum += 16
-			when "q" then sum += 17
-			when "r" then sum += 18
-			when "s" then sum += 19
-			when "t" then sum += 20
-			when "u" then sum += 21
-			when "v" then sum += 22
-			when "w" then sum += 23
-			when "x" then sum += 24
-			when "y" then sum += 25
-			when "z" then sum += 26
-		end
-	end
-	points << sum * z # Pushing counted value of name to an array
-	z += 1
+  sum = 0
+  0.upto(x.length - 1) do |y| # Itaration throught each letter of name
+    case x[y] 
+      when "a" then sum += 1
+      when "b" then sum += 2
+      when "c" then sum += 3
+      when "d" then sum += 4
+      when "e" then sum += 5
+      when "f" then sum += 6
+      when "g" then sum += 7
+      when "h" then sum += 8
+      when "i" then sum += 9
+      when "j" then sum += 10
+      when "k" then sum += 11
+      when "l" then sum += 12
+      when "m" then sum += 13
+      when "n" then sum += 14
+      when "o" then sum += 15
+      when "p" then sum += 16
+      when "q" then sum += 17
+      when "r" then sum += 18
+      when "s" then sum += 19
+      when "t" then sum += 20
+      when "u" then sum += 21
+      when "v" then sum += 22
+      when "w" then sum += 23
+      when "x" then sum += 24
+      when "y" then sum += 25
+      when "z" then sum += 26
+    end
+  end
+  points << sum * z # Pushing counted value of name to an array
+  z += 1
 end
 
 p points.reduce(:+) # Sum and print all counted names values
